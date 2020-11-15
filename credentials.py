@@ -41,3 +41,10 @@ class Credential:
 		'''
 
 		Credential.list_of_credentials.remove(self)
+
+  def generate_password(size=8, char=string.ascii_lowercase+string.ascii_lowercase+string.digits):
+		'''
+		Function to generate a password for a user if needed.
+		'''
+		password_gen=''.join(random.choice(char) for _ in range(size))
+		return password_gen
