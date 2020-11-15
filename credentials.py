@@ -26,3 +26,10 @@ class Credential:
 			if (user.first_name == first_name and user.password == password):
 				current_user = user.first_name
 		return current_user
+
+  def save_credentials(self):
+		'''
+		Function to save the user's entered credentials
+		'''
+
+		Credential.list_of_credentials.append(self)
