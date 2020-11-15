@@ -33,3 +33,11 @@ class Credential:
 		'''
 
 		Credential.list_of_credentials.append(self)
+
+  @classmethod
+	def delete_credentials(self):
+		'''
+		Function to help deleting the saved credentials if needed
+		'''
+
+		Credential.list_of_credentials.remove(self)
