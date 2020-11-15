@@ -76,6 +76,17 @@ class TestCredentials(unittest.TestCase):
         test_credential = Credential("mapeace","instagram","mapeacetwo","11111") 
         test_credential.save_credentials()
         
-        self.assertEqual(len(Credential.list_of_credentials),2)   
+        self.assertEqual(len(Credential.list_of_credentials),2)  
+
+    def test_find_by_credential_name(self):
+        '''
+		Test to check if we can find a credential by platform_name
+		'''
+        self.new_credential.save_credentials()
+        test_user = Credential('claudine','twitter','coco12','000000')
+        test_user.save_credentials()
+        
+        credential_exists = Credential.find_by_credential_name('twitter')
+        self.assertEqual(credential_exists,test_user) 
 if __name__ == '__main__':
     unittest.main()
