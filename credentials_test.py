@@ -88,5 +88,16 @@ class TestCredentials(unittest.TestCase):
         
         credential_exists = Credential.find_by_credential_name('twitter')
         self.assertEqual(credential_exists,test_user) 
+
+     def test_display_credentials(self):
+        '''
+        method that returns a list of all credentials saved
+        '''
+        self.new_credential.save_credentials()
+        test_user = Credential('claudine','twitter','coco12','000000')
+        test_user.save_credentials()
+        
+        self.assertEqual(Credential.display_credentials(User),Credential.user_credentials_list)
+        
 if __name__ == '__main__':
     unittest.main()
