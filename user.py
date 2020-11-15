@@ -13,3 +13,8 @@ class User:
 
 	users_list = []
 
+	def save_user(self):
+		'''
+		Method to save the created user's account into users_list
+		'''
+		User.users_list.append(self)
