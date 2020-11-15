@@ -33,10 +33,23 @@ class TestUser(unittest.TestCase):
         self.assertEqual(len(User.users_list),1)
         
     def cleanUp(self):
-            '''
-            cleanUp method that does clean up after each test case has run.
-            '''
-            User.users_list = []
+       '''
+        cleanUp method that does clean up after each test case has run.
+       '''
+        User.users_list = []
+
+class TestCredentials(unittest.TestCase):
+    '''
+    Test class that defines the test cases for the the credential class behaviours.
+
+   '''
+    def setUp(self):
+        '''
+		Setup method to run before each test case
+		'''
+        self.new_credential = Credential('evelyne','instagram','evelyne250','123456')
+
+    
 
 if __name__ == '__main__':
     unittest.main()
