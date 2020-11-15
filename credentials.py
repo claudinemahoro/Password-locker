@@ -15,3 +15,14 @@ class Credential:
 		self.platform_name = platform_name
 		self.account_name = account_name
 		self.password = password
+
+  @classmethod
+	def check_user(cls,first_name,password):
+		'''
+		Method that checks if the first-name and password entered by the user already exist in the users_list
+		'''
+		current_user = ''
+		for user in User.users_list:
+			if (user.first_name == first_name and user.password == password):
+				current_user = user.first_name
+		return current_user
