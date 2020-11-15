@@ -59,3 +59,13 @@ class Credential:
 			if credential.username == username:
 				user_credentials_list.append(credential)
 		return user_credentials_list
+
+  @classmethod
+	def find_by_credential_name(cls, platform_name):
+		'''
+		Method that takes in a platform_name and returns a credentials that matches that platform_name.
+		'''
+		for credential in cls.list_of_credentials:
+			if credential.platform_name == platform_name:
+				return credential
+		return False
