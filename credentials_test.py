@@ -10,7 +10,7 @@ class TestUser(unittest.TestCase):
 
     '''
     
-     def setUp(self):
+    def setUp(self):
         '''
         Setup method to run before each test case 
         ''' 
@@ -27,8 +27,8 @@ class TestUser(unittest.TestCase):
        
     def test_save_user(self):
         '''
-		Test to check if the new users info is saved into the users list
-		'''
+		    Test to check if the new users info is saved into the users list
+		    '''
         self.new_user.save_user()
         self.assertEqual(len(User.users_list),1)
         
@@ -45,14 +45,14 @@ class TestCredentials(unittest.TestCase):
    '''
     def setUp(self):
         '''
-		Setup method to run before each test case
-		'''
+		    Setup method to run before each test case
+		    '''
         self.new_credential = Credential('Claudine','gmail','clau1@gmail.com','abc123')
 
     def test__init__(self):
         '''
-		Test to check if the creation of credential instances is properly done
-		'''
+		    Test to check if the creation of credential instances is properly done
+		    '''
         self.assertEqual(self.new_credential.username,'Claudine')
         self.assertEqual(self.new_credential.platform_name,'gmail')
         self.assertEqual(self.new_credential.account_name,'clau1@gmail.com')
@@ -80,8 +80,8 @@ class TestCredentials(unittest.TestCase):
 
     def test_find_by_credential_name(self):
         '''
-		Test to check if we can find a credential by platform_name
-		'''
+		    Test to check if we can find a credential by platform_name
+	    	'''
         self.new_credential.save_credentials()
         test_user = Credential('claudine','twitter','coco12','000000')
         test_user.save_credentials()
@@ -89,7 +89,7 @@ class TestCredentials(unittest.TestCase):
         credential_exists = Credential.find_by_credential_name('twitter')
         self.assertEqual(credential_exists,test_user) 
 
-     def test_display_credentials(self):
+    def test_display_credentials(self):
         '''
         method that returns a list of all credentials saved
         '''
@@ -98,6 +98,11 @@ class TestCredentials(unittest.TestCase):
         test_user.save_credentials()
         
         self.assertEqual(Credential.display_credentials(User),Credential.user_credentials_list)
-        
+
+    def cleanUp(self):
+        '''
+        cleanUp method that does clean up after each test case has run.
+        '''
+        Credential.list_of_credentials = []   
 if __name__ == '__main__':
     unittest.main()
