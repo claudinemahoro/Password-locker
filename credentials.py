@@ -1,3 +1,7 @@
+import random 
+import string 
+from user import User  
+
 class Credential:
 	'''
 	Class to help saving user's different accounts'credentials or  create  new ones.
@@ -69,3 +73,5 @@ class Credential:
 			if credential.platform_name == platform_name:
 				return credential
 		return False
+
+    
