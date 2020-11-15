@@ -32,5 +32,11 @@ class TestUser(unittest.TestCase):
         self.new_user.save_user()
         self.assertEqual(len(User.users_list),1)
         
+    def cleanUp(self):
+            '''
+            cleanUp method that does clean up after each test case has run.
+            '''
+            User.users_list = []
+
 if __name__ == '__main__':
     unittest.main()
