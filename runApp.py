@@ -107,9 +107,9 @@ def main():
             password = input('Enter your password - ')
             pw = input('Confirm your password - ')
             save_user(create_user(first_name, last_name, password))
-            
-            print(f'Account creation successful! Names: {first_name} {last_name} ,password: {password}')
             print('\n')
+            print(f'Account creation successful! Names: {first_name} {last_name} ,password: {password}')
+            print("*"*20)
 
         elif short_code == 'lg':
             print("*"*20)
@@ -178,7 +178,7 @@ def main():
                                 break
                             else:
                                 print('Wrong option entered. Try again!')
-
+                                print('\n')
                         save_credential(create_credential(username,platform_name,account_name,password))
                         print('\n')
                         print(f'Credential Created: platform name: {platform_name} - Account Name: {account_name} - Password: {password}')
@@ -201,6 +201,7 @@ def main():
                         else:
                                 print('\n')
                                 print("No saved credentials with that platform name")
+                                print('\n')
     
                     elif short_code == 'rc':
                         print('\n')
@@ -247,6 +248,7 @@ def main():
             else:
                 
                 print('Wrong details entered. Try again or Create an Account!')
+                print('\n')
 
         else:
             print("*"*50)

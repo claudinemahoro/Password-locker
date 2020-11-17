@@ -14,7 +14,7 @@ class TestUser(unittest.TestCase):
         '''
         Setup method to run before each test case 
         ''' 
-        self.new_user = User('Claudine', 'Mahoro', '2580)
+        self.new_user = User('Claudine', 'Mahoro', '2580')
     
     def test_init(self):
         '''
@@ -33,10 +33,12 @@ class TestUser(unittest.TestCase):
         self.assertEqual(len(User.users_list),1)
         
     def cleanUp(self):
-       '''
-        cleanUp method that does clean up after each test case has run.
-       '''
+        '''
+        cleanUp method that does clean up after each test case run
+        '''
         User.users_list = []
+        
+   
 
 class TestCredentials(unittest.TestCase):
     '''
